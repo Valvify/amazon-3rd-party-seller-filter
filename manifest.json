@@ -3,11 +3,12 @@
   "version": "1.1",
   "description": "Filtering out 3rd party seller's product on Amazon search results.",
   "manifest_version": 3,
+  "minimum_chrome_version": "92",
   "background": {
-    "page": "src/html/background.html"
+    "service_worker": "background.js",
+    "type": "module"
   },
-  "permissions": [
-    "activeTab",
+  "host_permissions": [
     "*://*.amazon.com/*",
     "*://*.amazon.co.jp/*",
     "*://*.amazon.co.uk/*",
@@ -15,8 +16,8 @@
     "*://*.amazon.fr/*",
     "*://*.amazon.ca/*"
   ],
-  "browser_action": {
-    "default_icon": "icon/favicon-32x32_on.png",
+  "action": {
+    "default_icon": "icon/favicon-32x32_off.png",
     "default_title": "Amazon 3rd party seller filter"
   },
   "icons": {
